@@ -21,11 +21,8 @@ public class Produto {
     @NotNull(message = "Este atributo é obrigatória!")
     private String descricao;
 
-    @UpdateTimestamp
-    private LocalDateTime validade;
-
     @NotNull(message = "Este atributo é obrigatória!")
-    private double valor;
+    private double preco;
 
     @ManyToOne
     @JsonIgnoreProperties("produto")
@@ -55,20 +52,13 @@ public class Produto {
         this.descricao = descricao;
     }
 
-    public LocalDateTime getDataValidade() {
-        return validade;
+
+    public double getPreco() {
+        return preco;
     }
 
-    public void setDataValidade(LocalDateTime dataValidade) {
-        this.validade = validade;
-    }
-
-    public double getValor() {
-        return valor;
-    }
-
-    public void setValor(double valor) {
-        this.valor = valor;
+    public void setPreco(double preco) {
+        this.preco = preco;
     }
 
     public Categoria getCategoria() {
